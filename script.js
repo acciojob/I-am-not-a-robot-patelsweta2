@@ -74,11 +74,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Function to handle reset button click
+
   resetButton.addEventListener("click", function () {
     state = 1;
     selectedImages = [];
-    // resetButton.style.display = "none";
+
     verifyButton.style.display = "none";
     para.innerHTML = "";
     shuffledImages = shuffle([
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderImages();
   });
 
-  // Function to handle verify button click
+
   verifyButton.addEventListener("click", function () {
     state = 4;
     verifyButton.style.display = "none";
@@ -100,18 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     para.innerText =
       selectedImages[0].src === selectedImages[1].src ? success : error;
-
-    // Reset selected images and hide the result after a delay (adjust timing as needed)
-    // setTimeout(function () {
-    //   selectedImages.forEach((selectedImg) => {
-    //     selectedImg.classList.remove("selected");
-    //   });
-
-    //   state = 1;
-    //   para.innerText = "";
-    // }, 2000); // Delay reset by 2 seconds (adjust as needed)
   });
 
-  // Initial rendering
   renderImages();
 });
